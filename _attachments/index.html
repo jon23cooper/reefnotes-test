@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="reefcat">
+  <head>
+  <meta charset="UTF-8">
+  <title>Reef Notes</title>
+  
+  <link href="style/HTML5_twoColFixRtHdr.css" rel="stylesheet" type="text/css">
+  <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css">
+ 
+  <script type="text/javascript" src="Scripts/angular.min.js"></script>
+  <script type="text/javascript" src="Scripts/angular-resource.min.js"></script>
+  <script type="text/javascript" src="Scripts/app.js"></script>
+  <script type="text/javascript" src="Scripts/controllers.js"></script>
+  <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+  <div class="header">  
+  <ul id="MenuBar1" class="MenuBarHorizontal">
+    <li><a class="MenuBarItemSubmenu" href="#parameters">Home</a>
+    </li>
+    <li><a href="#parameters">Parameters</a></li>
+    <li><a class="MenuBarItemSubmenu" href="#logs">Logs</a>
+  </ul>
+  </div>
+    <script type="text/javascript">
+		var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+  </script>
+
+
+   
+
+ <div ng-view></div>
+
+  </body>
+</html>

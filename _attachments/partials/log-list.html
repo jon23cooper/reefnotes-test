@@ -1,0 +1,19 @@
+<p>Logs</p>
+
+ 
+ <div class="container">
+ <p><a href="#/logs/add">Add log</a>
+ <table>
+ <tr><th>Date</th><th>Time</th><th>Parameter</th><th>Value</th><th>Notes</th><th>Delete</th><th>Edit</th></tr>
+ <tr ng-repeat="myrow in log_rows">
+ 	<td>{{myrow.value.date}}</td>
+    <td>{{myrow.value.time}}</td>
+    <td>{{myrow.value.parameter}}</td>
+    <td>{{myrow.value.value}}</td>
+    <td>{{myrow.value.notes}}</td>
+    <td><button ng-click="delete(myrow)">Delete</button></td>
+    <td><button ng-click="edit(myrow)">Edit</button></td>
+    </tr>
+ </table>
+
+ </div>

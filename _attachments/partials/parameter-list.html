@@ -1,0 +1,70 @@
+<div class="sidebar">
+	<h1 align="center">Parameters</h1>
+	<ul class="parameter">
+    	<li ng-repeat="myrow in parameter_rows">
+    		<a href="#/parameters/{{myrow.key}}">{{myrow.value.name}}</a>
+        </li>
+	</ul>
+</div>
+<div class="container">
+<form name="Parameters">
+<fieldset>
+<legend>Add Parameter</legend>
+	<fieldset>
+    <legend>Details</legend>
+    <div class="formrow">
+	<label>Parameter:</label>
+	<input type="text" ng-model="name"/>
+    </div>
+    <div class="formrow">
+    <label>Units:</label>	
+    <input type="text" ng-model="units"/>
+    </div>
+    </fieldset>
+    <fieldset>
+    <legend>Ocean Levels</legend>
+    <div class="formrow">
+       <label>Low :</label>
+      <input type="text" ng-model="lowoceanlevel"/>
+      </div>
+      <div class="formrow">     
+      <label>Normal:</label>
+      <input type="text" ng-model="normaloceanlevel"/>
+      </div>
+      <div class="formrow">
+	  <label>High:</label>
+      <input type="text" ng-model="highoceanlevel"/>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Tank Levels</legend>
+      <div class="formrow">
+      <label>Minimum:</label>
+      <input type="text" ng-model="minimumtanklevel"/>
+      </div>
+      <div class="formrow">
+      <label>Optimum:</label>
+      <input type="text" ng-model="optimumtanklevel"/>
+      </div>
+      <div class="formrow">     
+      <label>Maximum:</label>
+      <input type="text" ng-model="maximumtanklevel"/>
+      </div>
+      
+    </fieldset>
+    <br />
+	<fieldset>
+    <div class="formrow">
+    	<label>Notes:</label>
+        <textarea wrap="hard" ng-model="notes"></textarea>
+    </div>
+	</fieldset>
+    
+    <div class="formrow">
+    <button ng-click="clear()" class="clear">Clear</button>
+	<button ng-click="save()" class="last">Save</button>
+    </div>
+</fieldset>    
+    
+</form>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+<form name="AddNewLog">
+<fieldset>
+
+<legend>Add Log</legend>
+<div class="formrow">
+<label>Date:</label>
+<input type="date" ng-model="form.date"/>
+</div>
+<div class="formrow">
+<label>Time:</label>
+<input type="time" ng-model="form.time"/>
+</div>
+<div class="formrow">
+<label>Parameter:</label>
+<input type="text" ng-model="form.parameter">
+</div>
+<div class="formrow">
+<label>Value:</label>
+<input type="text" required="required" ng-model="form.value" />
+</div>
+<div class="formrow">
+<label>Notes:</label>
+<textarea ng-model="form.notes"></textarea>
+</div>
+<div class="formrow">
+<button ng-click="cancel()" class="cancel">Cancel</button>
+<button ng-click="save()" class="last">Save</button>
+</div>
+</fieldset>
+</form>
+</div>

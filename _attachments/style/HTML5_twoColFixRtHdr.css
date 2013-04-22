@@ -1,0 +1,76 @@
+@charset "UTF-8";
+.header{
+	width:100%;
+	height:50px;
+}
+.sidebar {
+	float: left;
+	width: 18%;
+	background-color: #0099FF;
+	padding-bottom: 10px;
+}
+.container {
+	margin-left:20px;
+	padding: 10px 50px;
+	width: 60%;
+	float: left;
+	border:1px solid #cccccc;
+	background-color:#3FF;
+}
+fieldset{
+	width:90%;
+	background-color:#FFC;
+}
+fieldset.inner{
+	width:90%;
+}
+.formrow{
+	width: 95%;
+	float:left;
+	padding: 10px;
+}
+label{
+	padding-right:10px;
+	text-align: right;
+	width: 15%;
+	float: left;
+	display:block;
+}
+input{
+	display:inline;
+	width:20%;
+}
+
+textarea{
+	display:inline;
+	width:70%;
+	min-height:50px;
+}
+button{
+	width:100px;
+}
+button.cancel{
+	margin-left:16%;
+	display:inline;
+	float:left;
+}
+button.mid{
+	display:inline;
+	margin-left:10%;
+}
+button.last{
+	display:inline;
+	float:right;
+	margin-right:12%;
+}
+table,td,th{
+	border:groove;
+}
+
+table{
+	width:100%;
+	border-collapse:collapse;
+}
+td{
+	padding:10px;
+}
