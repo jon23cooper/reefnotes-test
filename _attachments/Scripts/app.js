@@ -1,6 +1,6 @@
 // app module
 'use strict';
-angular.module('reefcat',['ngResource']).
+angular.module('reefnotes',['ngResource']).
 	config(['$routeProvider', function($routeProvider) {
 		$routeProvider.
 			when('/logs',{templateUrl:'partials/log-list.html', controller:LogListCtrl}).
