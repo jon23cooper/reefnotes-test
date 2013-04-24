@@ -1,25 +1,38 @@
 // JavaScript Document
-function ParameterListCtrl($scope, $http, $log){
+function ParameterListCtrl($scope, $http, $log, ParameterModel){
 //paths
+	//$scope.model=ParameterModel.query();
+	$scope.form={
+		type : "parameter",
+	}
+	
 	$scope.url={
 		host:window.location.host,
 		webapp:"../../",
 		views:"../../_design/parameters/_view/",
 	};
+	/*
 	//parameter document object
 	$scope.parameter_doc={
 		type:"parameter",
-	};
+	*/
 	$scope.show=function(){
-		$http.get($scope.url.views + "all").success(function(myparameters){
-			$scope.parameter_rows=myparameters.rows;
-		});
-	};
+		$scope.model=ParameterModel.query();
+		/*$http.get($scope.url.views + "all")
+			.success(function(myparameters){
+				$scope.parameter_rows=myparameters.rows;
+			})
+			.error(function(data, status, headers, config){
+				$log.info(data, status, headers, config);
+			});*/
+	}
+	
 	//save form data as new document of type: parameter
   $scope.save=function(){
  	 //create a json object to hold the new parameter document data
  	 //must be of type parameter so set that.
  	 //name is supplied by the name text input on the form
+	 /*
  	 $scope.parameter_doc.name=$scope.name;
 	 $scope.parameter_doc.units=$scope.units;
 	 $scope.parameter_doc.lowoceanlevel=$scope.lowoceanlevel;
@@ -29,27 +42,37 @@ function ParameterListCtrl($scope, $http, $log){
 	 $scope.parameter_doc.optimumtanklevel=$scope.optimumtanklevel;
 	 $scope.parameter_doc.maximumtanklevel=$scope.maximumtanklevel;
 	 $scope.parameter_doc.Notes=$scope.notes;
+	 */
  	 //post the data to CouchDB
- 	 $http.post($scope.url.webapp, $scope.parameter_doc).success(function(data, status, headers, config){
+ 	 $http.post($scope.url.webapp, $scope.form)
+	 	.success(function(data, status, headers, config){
  		 // tell the user we've saved the data
- 		 $scope.message="Parameter " + $scope.parameter_doc.name + " added";
- 		 $scope.show();
-		 $scope.clear();
+		 $log.info("Parameter " + $scope.form.name + " added");
+ 		 $scope.message="Parameter " + $scope.form.name + " added";
+		 $scope.model=ParameterModel.query()
+ 		 //$scope.show();
+		$scope.clear();
  	 }).error(function(data, status, headers, config){
  		 $log.info(data, status, headers, config);
  	 });         
   };
 	$scope.show();
 	$scope.clear=function(){
-		$scope.name="";
-		$scope.units="";
-		$scope.lowoceanlevel="";
-		$scope.normaloceanlevel="";
-		$scope.highoceanlevel="";
-		$scope.minimumtanklevel="";
-		$scope.optimumtanklevel="";
-		$scope.maximumtanklevel="";
-		$scope.notes="";
+		$scope.form={
+			type : "parameter",
+		};
+		$scope.show();
+		/*
+		$scope.form.name="";
+		$scope.form.units="";
+		$scope.form.lowoceanlevel="";
+		$scope.form.normaloceanlevel="";
+		$scope.form.highoceanlevel="";
+		$scope.form.minimumtanklevel="";
+		$scope.form.optimumtanklevel="";
+		$scope.form.maximumtanklevel="";
+		$scope.form.notes="";
+		*/
 	}
 }
 
@@ -57,6 +80,7 @@ function ParameterDetailCtrl($scope, $routeParams, $http, $location, $log) {
 	var $parameter;
 	
 	$scope.parameterId = $routeParams.parameterId;
+	$scope.form={};
 //paths
 	$scope.url={
 		host:window.location.host,

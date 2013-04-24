@@ -1,7 +1,8 @@
+
 <div class="sidebar">
 	<h1 align="center">Parameters</h1>
 	<ul class="parameter">
-    	<li ng-repeat="myrow in parameter_rows">
+    	<li ng-repeat="myrow in model.rows">
     		<a href="#/parameters/{{myrow.key}}">{{myrow.value.name}}</a>
         </li>
 	</ul>
@@ -14,41 +15,41 @@
     <legend>Details</legend>
     <div class="formrow">
 	<label>Parameter:</label>
-	<input type="text" ng-model="name"/>
+	<input type="text" ng-model="form.name"/>
     </div>
     <div class="formrow">
     <label>Units:</label>	
-    <input type="text" ng-model="units"/>
+    <input type="text" ng-model="form.units"/>
     </div>
     </fieldset>
     <fieldset>
     <legend>Ocean Levels</legend>
     <div class="formrow">
        <label>Low :</label>
-      <input type="text" ng-model="lowoceanlevel"/>
+      <input type="text" ng-model="form.lowoceanlevel"/>
       </div>
       <div class="formrow">     
       <label>Normal:</label>
-      <input type="text" ng-model="normaloceanlevel"/>
+      <input type="text" ng-model="form.normaloceanlevel"/>
       </div>
       <div class="formrow">
 	  <label>High:</label>
-      <input type="text" ng-model="highoceanlevel"/>
+      <input type="text" ng-model="form.highoceanlevel"/>
       </div>
     </fieldset>
     <fieldset>
       <legend>Tank Levels</legend>
       <div class="formrow">
       <label>Minimum:</label>
-      <input type="text" ng-model="minimumtanklevel"/>
+      <input type="text" ng-model="form.minimumtanklevel"/>
       </div>
       <div class="formrow">
       <label>Optimum:</label>
-      <input type="text" ng-model="optimumtanklevel"/>
+      <input type="text" ng-model="form.optimumtanklevel"/>
       </div>
       <div class="formrow">     
       <label>Maximum:</label>
-      <input type="text" ng-model="maximumtanklevel"/>
+      <input type="text" ng-model="form.maximumtanklevel"/>
       </div>
       
     </fieldset>
@@ -56,7 +57,7 @@
 	<fieldset>
     <div class="formrow">
     	<label>Notes:</label>
-        <textarea wrap="hard" ng-model="notes"></textarea>
+        <textarea wrap="hard" ng-model="form.notes"></textarea>
     </div>
 	</fieldset>
     
